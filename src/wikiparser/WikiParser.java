@@ -39,8 +39,15 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 /**
- *
- * @author willi
+ * The purpose of this project is take a XML file from the Wikipedia Special
+ * Export tool, and parse the data into 4 (or 5) different XML files.
+ * 
+ * Each one will contain different types of data parsed from the same source:
+ * categories, citations, anchor-text, and the main article text, or all.
+ * 
+ * @author W. Hatfield
+ * @author U. Jaimini
+ * @author U. Panjala
  */
 public class WikiParser {
     
@@ -198,7 +205,11 @@ public class WikiParser {
         return null;
     }
     
-
+    /**
+     * 
+     * @param doc the DOM/XML document to write to a file
+     * @param fn the filename of the XML file to create
+     */
     private static void writeDocumentToXMLFile(Document doc, String fn) {
         
         TransformerFactory tf;
@@ -226,6 +237,8 @@ public class WikiParser {
     }
     
     /**
+     * THE MAIN METHOD. <-- String fileName designates input for now. -->
+     * 
      * @param args the command line arguments
      */
     public static void main(String[] args) {
