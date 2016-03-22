@@ -26,8 +26,11 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
 /**
- *
- * @author willi
+ * A Wrapper Class for the Wikipedia Special Export XML Data.
+ * 
+ * @author W. Hatfield
+ * @author U. Jaimini
+ * @author U. Panjala
  */
 public class WikipediaPage {
     protected final String pageTitle;       // name of the the wiki-page
