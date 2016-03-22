@@ -1,4 +1,4 @@
-/*
+/**
 * Copyright (c) 2016 William Hatfield, Utkarshani Jaimini, Uday Sagar Panjala.
 * 
 * Permission is hereby granted, free of charge, to any person obtaining a copy
