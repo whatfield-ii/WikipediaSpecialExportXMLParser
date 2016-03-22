@@ -19,6 +19,7 @@
 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 * THE SOFTWARE.
 */
+//Add to wikiparser package
 package wikiparser;
 
 import java.io.File;
