@@ -109,7 +109,7 @@ public class xmlPage {
     private ArrayList<String> parseAnchorTags(Element page) {
         
             NodeList al;
-            // get a nodelist of elements (wiki pages)
+            // get a nodelist of anchor tags from xml document
             al = page.getElementsByTagName("anchor");
             // get the list for storing articles
             ArrayList<String> list = new ArrayList<>();
