@@ -34,4 +34,6 @@ Milestones
 
 * 28 March: Have a result set and begin tuning the machine learning
 
+* 31 March: Generate a cummulative report that says the frequency of each POS in a single text file for each.
+
 * 04 April: Begin different metrics (nouns, verbs, pronouns, etc)
