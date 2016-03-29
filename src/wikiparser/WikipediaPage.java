@@ -224,11 +224,14 @@ public class WikipediaPage {
         
         StringBuffer buff = new StringBuffer();
         int braceCount = 0;
-        char current;
+        char current, next;
         
-        for (int i = 0; i < symbols.length; i++) {
+        for (int i = 0; i < symbols.length - 1; i++) {
             
             current = symbols[i];
+            next = symbols[i + 1];
+            
+            if (current == '=' && next == '=') break;
             
             if (current == '{') braceCount++;
             if (current == '}') braceCount--;
