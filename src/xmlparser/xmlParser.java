@@ -19,7 +19,7 @@
 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 * THE SOFTWARE.
 */
-//Add to xmlparser package
+//Add to xmlparser package - to be changed to xml and postagger parser
 package xmlparser;
 
 import java.io.BufferedWriter;
