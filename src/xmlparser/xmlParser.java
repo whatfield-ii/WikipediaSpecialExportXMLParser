@@ -22,6 +22,9 @@
 //Add to xmlparser package - to be changed to xml and postagger parser
 package xmlparser;
 
+import java.io.IOException;
+ 
+import edu.stanford.nlp.tagger.maxent.MaxentTagger;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.File;
@@ -115,7 +118,8 @@ public class xmlParser {
     private static File makeTextFile(ArrayList<xmlPage> wikiList, int docType, String fileName) {
 
         BufferedWriter output = null;     
-        
+                // InitiTaggeralize the tagger
+        MaxentTagger tagger = new MaxentTagger("english-bidirectional-distsim.tagger");
         try {
             File file = new File(fileName);
             output = new BufferedWriter(new FileWriter(file));
@@ -126,43 +130,43 @@ public class xmlParser {
                 switch (docType) {
                     case 1: {
                         for (String categoryString : wiki.getCategories()) {
-                             output.write(categoryString);
+                             output.write(tagger.tagString(categoryString));
                         }
                         break;
                     }
                     case 2: {
                         for (String citationSring : wiki.getCitations()) {
-                             output.write(citationSring);
+                             output.write(tagger.tagString(citationSring));
                         }
                         break;
                     }
                     case 3: {
                         for (String anchorString : wiki.getAnchors()) {
-                             output.write(anchorString);
+                             output.write(tagger.tagString(anchorString));
                         }
                         break;
                     }
                     case 4: {
                         for (String textString : wiki.getText()) {
-                             output.write(textString);
+                             output.write(tagger.tagString(textString));
                         }
                         break;
                     }
                     case -1: {
                         // add Categories, Citations, Anchors, and Text
                         for (String categoryString : wiki.getCategories()) {
-                             output.write(categoryString);
+                             output.write(tagger.tagString(categoryString));
                         }
 
                         for (String citationSring : wiki.getCitations()) {
-                             output.write(citationSring);
+                             output.write(tagger.tagString(citationSring));
                         }
 
                         for (String anchorString : wiki.getAnchors()) {
-                             output.write(anchorString);
+                             output.write(tagger.tagString(anchorString));
                         }
                         for (String textString : wiki.getText()) {
-                             output.write(textString);
+                             output.write(tagger.tagString(textString));
                         }
                         break;
                     }
