@@ -115,65 +115,107 @@ public class xmlParser {
      *     -1: xml DOM w/All Tags
      * @return a document including tags, determined by docType
      */
-    private static File makeTextFile(ArrayList<xmlPage> wikiList, int docType, String fileName) {
+    private static ArrayList<File> makeTextFile(ArrayList<xmlPage> wikiList, int docType, String fileName) {
 
-        BufferedWriter output = null;     
+                      BufferedWriter output = null; 
                 // InitiTaggeralize the tagger
-        MaxentTagger tagger = new MaxentTagger("english-bidirectional-distsim.tagger");
+        MaxentTagger tagger = new MaxentTagger("english-bidirectional-distsim.tagger");  
         try {
-            File file = new File(fileName);
-            output = new BufferedWriter(new FileWriter(file));
-
+            ArrayList<File> textPageFile = new ArrayList<File>();
             // iterate through list appending to doc
             for (xmlPage wiki : wikiList) {
                 // iterate the articles list of links and append them
                 switch (docType) {
                     case 1: {
+                      
+                          
+            File file = new File(fileName+wiki.pageTitle);
+            output = new BufferedWriter(new FileWriter(file));                        
                         for (String categoryString : wiki.getCategories()) {
+                            System.out.println("hello");
                              output.write(tagger.tagString(categoryString));
+                             output.write(categoryString);                             
                         }
+                        output.flush();                        
+                        textPageFile.add(file);
                         break;
+                        
                     }
                     case 2: {
+                      
+                          
+            File file = new File(fileName+wiki.pageTitle);
+            output = new BufferedWriter(new FileWriter(file));                         
                         for (String citationSring : wiki.getCitations()) {
+                            System.out.println(citationSring);                            
                              output.write(tagger.tagString(citationSring));
+                             output.write(citationSring);
                         }
+                        output.flush();                        
+                        textPageFile.add(file);
                         break;
                     }
                     case 3: {
+                      
+                          
+            File file = new File(fileName+wiki.pageTitle);
+            output = new BufferedWriter(new FileWriter(file));                         
                         for (String anchorString : wiki.getAnchors()) {
+                            System.out.println("hello");                            
                              output.write(tagger.tagString(anchorString));
+                             output.write(anchorString);
                         }
+                        output.flush();                        
+                        textPageFile.add(file);
                         break;
                     }
                     case 4: {
+                      
+                          
+            File file = new File(fileName+wiki.pageTitle);
+            output = new BufferedWriter(new FileWriter(file));                         
                         for (String textString : wiki.getText()) {
+                            System.out.println(textString);                            
                              output.write(tagger.tagString(textString));
+                             output.write(textString);
                         }
+                        output.flush();
+                        textPageFile.add(file);
                         break;
                     }
                     case -1: {
+                      
+                          
+                                    File file = new File(fileName+wiki.pageTitle);
+            output = new BufferedWriter(new FileWriter(file)); 
+            
                         // add Categories, Citations, Anchors, and Text
                         for (String categoryString : wiki.getCategories()) {
                              output.write(tagger.tagString(categoryString));
+                             output.write(categoryString);
                         }
 
                         for (String citationSring : wiki.getCitations()) {
                              output.write(tagger.tagString(citationSring));
+                             output.write(citationSring);
                         }
 
                         for (String anchorString : wiki.getAnchors()) {
                              output.write(tagger.tagString(anchorString));
+                             output.write(anchorString);
                         }
                         for (String textString : wiki.getText()) {
                              output.write(tagger.tagString(textString));
+                             output.write(textString);
                         }
+                        output.flush();                        
+                        textPageFile.add(file);
                         break;
                     }
                 }
             } /* ALL ARTICLES NOW ADDED TO THE DOCUMENT OBJECT */
             
-            return file;
+          return textPageFile;  
             
         }  catch ( IOException e ) {
             e.printStackTrace();
@@ -239,19 +281,19 @@ public class xmlParser {
         String pageTextOutputFileName = "POSTaggerInput/pageTextDocument.txt";         
         
         ArrayList<xmlPage> ArticlePagelist = importAnchorXMLFile(pageArticleFileName, "article");
-        File articlePageFile = makeTextFile(ArticlePagelist, -1, pageArticleOutputFileName);
+        ArrayList<File> articlePageFile = makeTextFile(ArticlePagelist, -1, pageArticleOutputFileName);
         
         ArrayList<xmlPage> CategoryPagelist = importAnchorXMLFile(pageCategoryFileName, "category");
-        File categoryPageFile = makeTextFile(CategoryPagelist, 1, pageCategoryOutputFileName);
+        ArrayList<File> categoryPageFile = makeTextFile(CategoryPagelist, 1, pageCategoryOutputFileName);
         
         ArrayList<xmlPage> CitationPagelist = importAnchorXMLFile(pageCitationFileName, "citation");
-        File citationPageFile = makeTextFile(CitationPagelist, 2, pageCitationOutputFileName);
+        ArrayList<File> citationPageFile = makeTextFile(CitationPagelist, 2, pageCitationOutputFileName);
         
         ArrayList<xmlPage> AnchorPagelist = importAnchorXMLFile(pageAnchorFileName, "anchor");
-        File anchorPageFile = makeTextFile(AnchorPagelist, 3, pageAnchorOutputFileName);
+        ArrayList<File> anchorPageFile = makeTextFile(AnchorPagelist, 3, pageAnchorOutputFileName);
         
         ArrayList<xmlPage> TextPagelist = importAnchorXMLFile(pageTextFileName, "text");
-        File textPageFile = makeTextFile(TextPagelist, 4, pageTextOutputFileName);
+        ArrayList<File> textPageFile = makeTextFile(TextPagelist, 4, pageTextOutputFileName);
            
     }
     
