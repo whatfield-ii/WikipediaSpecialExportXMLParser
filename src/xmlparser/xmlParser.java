@@ -132,9 +132,7 @@ public class xmlParser {
             File file = new File(fileName+wiki.pageTitle);
             output = new BufferedWriter(new FileWriter(file));                        
                         for (String categoryString : wiki.getCategories()) {
-                            System.out.println("hello");
-                             output.write(tagger.tagString(categoryString));
-                             output.write(categoryString);                             
+                             output.write(tagger.tagString(categoryString));             
                         }
                         output.flush();                        
                         textPageFile.add(file);
@@ -146,10 +144,8 @@ public class xmlParser {
                           
             File file = new File(fileName+wiki.pageTitle);
             output = new BufferedWriter(new FileWriter(file));                         
-                        for (String citationSring : wiki.getCitations()) {
-                            System.out.println(citationSring);                            
+                        for (String citationSring : wiki.getCitations()) {               
                              output.write(tagger.tagString(citationSring));
-                             output.write(citationSring);
                         }
                         output.flush();                        
                         textPageFile.add(file);
@@ -160,10 +156,8 @@ public class xmlParser {
                           
             File file = new File(fileName+wiki.pageTitle);
             output = new BufferedWriter(new FileWriter(file));                         
-                        for (String anchorString : wiki.getAnchors()) {
-                            System.out.println("hello");                            
+                        for (String anchorString : wiki.getAnchors()) {          
                              output.write(tagger.tagString(anchorString));
-                             output.write(anchorString);
                         }
                         output.flush();                        
                         textPageFile.add(file);
@@ -174,10 +168,8 @@ public class xmlParser {
                           
             File file = new File(fileName+wiki.pageTitle);
             output = new BufferedWriter(new FileWriter(file));                         
-                        for (String textString : wiki.getText()) {
-                            System.out.println(textString);                            
+                        for (String textString : wiki.getText()) {               
                              output.write(tagger.tagString(textString));
-                             output.write(textString);
                         }
                         output.flush();
                         textPageFile.add(file);
@@ -192,21 +184,17 @@ public class xmlParser {
                         // add Categories, Citations, Anchors, and Text
                         for (String categoryString : wiki.getCategories()) {
                              output.write(tagger.tagString(categoryString));
-                             output.write(categoryString);
                         }
 
                         for (String citationSring : wiki.getCitations()) {
                              output.write(tagger.tagString(citationSring));
-                             output.write(citationSring);
                         }
 
                         for (String anchorString : wiki.getAnchors()) {
                              output.write(tagger.tagString(anchorString));
-                             output.write(anchorString);
                         }
                         for (String textString : wiki.getText()) {
                              output.write(tagger.tagString(textString));
-                             output.write(textString);
                         }
                         output.flush();                        
                         textPageFile.add(file);
@@ -274,11 +262,11 @@ public class xmlParser {
         String pageAnchorFileName = "xmlOutput/pageAnchorDocument.xml";
         String pageTextFileName = "xmlOutput/pageTextDocument.xml"; 
         
-        String pageArticleOutputFileName = "POSTaggerInput/pageArticleDocument.txt";
-        String pageCategoryOutputFileName = "POSTaggerInput/pageCategoryDocument.txt";        
-        String pageCitationOutputFileName = "POSTaggerInput/pageCitationDocument.txt";
-        String pageAnchorOutputFileName = "POSTaggerInput/pageAnchorDocument.txt";
-        String pageTextOutputFileName = "POSTaggerInput/pageTextDocument.txt";         
+        String pageArticleOutputFileName = "POSTaggerOutput/pageArticleDocument.txt";
+        String pageCategoryOutputFileName = "POSTaggerOutput/pageCategoryDocument.txt";        
+        String pageCitationOutputFileName = "POSTaggerOutput/pageCitationDocument.txt";
+        String pageAnchorOutputFileName = "POSTaggerOutput/pageAnchorDocument.txt";
+        String pageTextOutputFileName = "POSTaggerOutput/pageTextDocument.txt";         
         
         ArrayList<xmlPage> ArticlePagelist = importAnchorXMLFile(pageArticleFileName, "article");
         ArrayList<File> articlePageFile = makeTextFile(ArticlePagelist, -1, pageArticleOutputFileName);
