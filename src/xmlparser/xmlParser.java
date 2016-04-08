@@ -43,6 +43,13 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+import java.io.BufferedReader; 
+import java.io.FileReader; 
+import java.util.Collections; 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * The purpose of this project is take a XML file from the Wikipedia Special
@@ -115,9 +122,10 @@ public class xmlParser {
      *     -1: xml DOM w/All Tags
      * @return a document including tags, determined by docType
      */
-    private static ArrayList<File> makeTextFile(ArrayList<xmlPage> wikiList, int docType, String fileName) {
+    private static ArrayList<File> makeTextFile(ArrayList<xmlPage> wikiList, int docType, String fileName, String taggedFolderName, String cummReportsFolderName) {
 
                       BufferedWriter output = null; 
+                      
                 // InitiTaggeralize the tagger
         MaxentTagger tagger = new MaxentTagger("english-bidirectional-distsim.tagger");  
         try {
@@ -127,56 +135,162 @@ public class xmlParser {
                 // iterate the articles list of links and append them
                 switch (docType) {
                     case 1: {
-                      
-                          
-            File file = new File(fileName+wiki.pageTitle);
+          Map<String, Integer> map = new HashMap<>();                      
+FileWriter AttrFstream;
+    BufferedWriter AttrOut;
+
+    // create your filewriter and bufferedreader
+    AttrFstream = new FileWriter("CumulativeReports/Cumm_"+fileName+wiki.pageTitle);
+    AttrOut = new BufferedWriter(AttrFstream);
+
+    // create your iterator for your map
+    Iterator<Map.Entry<String, Integer>> it = map.entrySet().iterator();    
+                         
+            File file = new File(taggedFolderName + "/"+wiki.pageTitle+".txt");
             output = new BufferedWriter(new FileWriter(file));                        
                         for (String categoryString : wiki.getCategories()) {
-                             output.write(tagger.tagString(categoryString));             
+                             String taggedCategoryString = tagger.tagString(categoryString);
+                             output.write(taggedCategoryString); 
+        Integer n = map.get(taggedCategoryString);
+        n = (n == null) ? 1 : ++n;
+        map.put(taggedCategoryString, n);                             
                         }
+    // then use the iterator to loop through the map, stopping when we reach the
+    // last record in the map or when we have printed enough records
+    while (it.hasNext()) {
+
+        // the key/value pair is stored here in pairs
+        HashMap.Entry<String, Integer> pairs = it.next();
+
+        // since you only want the value, we only care about pairs.getValue(), which is written to out
+        AttrOut.write(pairs.getValue() + "\n");
+    }
+    // lastly, close the file and end
+    AttrOut.close();                         
                         output.flush();                        
                         textPageFile.add(file);
                         break;
                         
                     }
                     case 2: {
-                      
+          Map<String, Integer> map = new HashMap<>();                      
+FileWriter AttrFstream;
+    BufferedWriter AttrOut;
+
+    // create your filewriter and bufferedreader
+    AttrFstream = new FileWriter("CumulativeReports/Cumm_"+fileName+wiki.pageTitle);
+    AttrOut = new BufferedWriter(AttrFstream);
+
+    // create your iterator for your map
+    Iterator<Map.Entry<String, Integer>> it = map.entrySet().iterator();                       
                           
             File file = new File(fileName+wiki.pageTitle);
             output = new BufferedWriter(new FileWriter(file));                         
                         for (String citationSring : wiki.getCitations()) {               
                              output.write(tagger.tagString(citationSring));
+        Integer n = map.get(citationSring);
+        n = (n == null) ? 1 : ++n;
+        map.put(citationSring, n);                             
                         }
+    // then use the iterator to loop through the map, stopping when we reach the
+    // last record in the map or when we have printed enough records
+    while (it.hasNext()) {
+
+        // the key/value pair is stored here in pairs
+        HashMap.Entry<String, Integer> pairs = it.next();
+
+        // since you only want the value, we only care about pairs.getValue(), which is written to out
+        AttrOut.write(pairs.getValue() + "\n");
+    }
+    // lastly, close the file and end
+    AttrOut.close();   
                         output.flush();                        
                         textPageFile.add(file);
                         break;
                     }
                     case 3: {
-                      
+          Map<String, Integer> map = new HashMap<>();                      
+FileWriter AttrFstream;
+    BufferedWriter AttrOut;
+
+    // create your filewriter and bufferedreader
+    AttrFstream = new FileWriter("CumulativeReports/Cumm_"+fileName+wiki.pageTitle);
+    AttrOut = new BufferedWriter(AttrFstream);
+
+    // create your iterator for your map
+    Iterator<Map.Entry<String, Integer>> it = map.entrySet().iterator();                       
                           
             File file = new File(fileName+wiki.pageTitle);
             output = new BufferedWriter(new FileWriter(file));                         
                         for (String anchorString : wiki.getAnchors()) {          
                              output.write(tagger.tagString(anchorString));
+        Integer n = map.get(anchorString);
+        n = (n == null) ? 1 : ++n;
+        map.put(anchorString, n);                             
                         }
+    // then use the iterator to loop through the map, stopping when we reach the
+    // last record in the map or when we have printed enough records
+    while (it.hasNext()) {
+
+        // the key/value pair is stored here in pairs
+        HashMap.Entry<String, Integer> pairs = it.next();
+
+        // since you only want the value, we only care about pairs.getValue(), which is written to out
+        AttrOut.write(pairs.getValue() + "\n");
+    }
+    // lastly, close the file and end
+    AttrOut.close();   
                         output.flush();                        
                         textPageFile.add(file);
                         break;
                     }
                     case 4: {
-                      
+          Map<String, Integer> map = new HashMap<>();                      
+FileWriter AttrFstream;
+    BufferedWriter AttrOut;
+
+    // create your filewriter and bufferedreader
+    AttrFstream = new FileWriter("CumulativeReports/Cumm_"+fileName+wiki.pageTitle);
+    AttrOut = new BufferedWriter(AttrFstream);
+
+    // create your iterator for your map
+    Iterator<Map.Entry<String, Integer>> it = map.entrySet().iterator();                       
                           
             File file = new File(fileName+wiki.pageTitle);
             output = new BufferedWriter(new FileWriter(file));                         
                         for (String textString : wiki.getText()) {               
                              output.write(tagger.tagString(textString));
+        Integer n = map.get(textString);
+        n = (n == null) ? 1 : ++n;
+        map.put(textString, n);                             
                         }
+    // then use the iterator to loop through the map, stopping when we reach the
+    // last record in the map or when we have printed enough records
+    while (it.hasNext()) {
+
+        // the key/value pair is stored here in pairs
+        HashMap.Entry<String, Integer> pairs = it.next();
+
+        // since you only want the value, we only care about pairs.getValue(), which is written to out
+        AttrOut.write(pairs.getValue() + "\n");
+    }
+    // lastly, close the file and end
+    AttrOut.close();  
                         output.flush();
                         textPageFile.add(file);
                         break;
                     }
                     case -1: {
-                      
+          Map<String, Integer> map = new HashMap<>();                      
+FileWriter AttrFstream;
+    BufferedWriter AttrOut;
+
+    // create your filewriter and bufferedreader
+    AttrFstream = new FileWriter("CumulativeReports/Cumm_"+fileName+wiki.pageTitle);
+    AttrOut = new BufferedWriter(AttrFstream);
+
+    // create your iterator for your map
+    Iterator<Map.Entry<String, Integer>> it = map.entrySet().iterator();                       
                           
                                     File file = new File(fileName+wiki.pageTitle);
             output = new BufferedWriter(new FileWriter(file)); 
@@ -184,18 +298,42 @@ public class xmlParser {
                         // add Categories, Citations, Anchors, and Text
                         for (String categoryString : wiki.getCategories()) {
                              output.write(tagger.tagString(categoryString));
+        Integer n = map.get(categoryString);
+        n = (n == null) ? 1 : ++n;
+        map.put(categoryString, n);                              
                         }
 
                         for (String citationSring : wiki.getCitations()) {
                              output.write(tagger.tagString(citationSring));
+        Integer n = map.get(citationSring);
+        n = (n == null) ? 1 : ++n;
+        map.put(citationSring, n);                              
                         }
 
                         for (String anchorString : wiki.getAnchors()) {
                              output.write(tagger.tagString(anchorString));
+        Integer n = map.get(anchorString);
+        n = (n == null) ? 1 : ++n;
+        map.put(anchorString, n);                              
                         }
                         for (String textString : wiki.getText()) {
                              output.write(tagger.tagString(textString));
+        Integer n = map.get(textString);
+        n = (n == null) ? 1 : ++n;
+        map.put(textString, n);                             
                         }
+    // then use the iterator to loop through the map, stopping when we reach the
+    // last record in the map or when we have printed enough records
+    while (it.hasNext()) {
+
+        // the key/value pair is stored here in pairs
+        HashMap.Entry<String, Integer> pairs = it.next();
+
+        // since you only want the value, we only care about pairs.getValue(), which is written to out
+        AttrOut.write(pairs.getValue() + "\n");
+    }
+    // lastly, close the file and end
+    AttrOut.close();  
                         output.flush();                        
                         textPageFile.add(file);
                         break;
@@ -262,17 +400,46 @@ public class xmlParser {
         String pageAnchorFileName = "xmlOutput/pageAnchorDocument.xml";
         String pageTextFileName = "xmlOutput/pageTextDocument.xml"; 
         
-        String pageArticleOutputFileName = "POSTaggerOutput/pageArticleDocument.txt";
-        String pageCategoryOutputFileName = "POSTaggerOutput/pageCategoryDocument.txt";        
-        String pageCitationOutputFileName = "POSTaggerOutput/pageCitationDocument.txt";
-        String pageAnchorOutputFileName = "POSTaggerOutput/pageAnchorDocument.txt";
-        String pageTextOutputFileName = "POSTaggerOutput/pageTextDocument.txt";         
+        String pageArticleOutputFileName = "POSTaggerOutput/pageArticleDocument";
+        String pageCategoryOutputFileName = "POSTaggerOutput/pageCategoryDocument";        
+        String pageCitationOutputFileName = "POSTaggerOutput/pageCitationDocument";
+        String pageAnchorOutputFileName = "POSTaggerOutput/pageAnchorDocument";
+        String pageTextOutputFileName = "POSTaggerOutput/pageTextDocument";    
         
-        ArrayList<xmlPage> ArticlePagelist = importAnchorXMLFile(pageArticleFileName, "article");
-        ArrayList<File> articlePageFile = makeTextFile(ArticlePagelist, -1, pageArticleOutputFileName);
-        
+        String taggerOutputFolder = "POSTaggerOutput";
+        String cummReportsFolder = "CumulativeReports";         
+File theDir = new File("new folder");
+
+// if the directory does not exist, create it
+if (!theDir.exists()) {
+    System.out.println("creating directory: " + taggerOutputFolder);
+    boolean result = false;
+
+    try{
+        theDir.mkdir();
+        result = true;
+    } 
+    catch(SecurityException se){
+        //handle it
+    } 
+}
+File theDir2 = new File(cummReportsFolder);
+
+// if the directory does not exist, create it
+if (!theDir2.exists()) {
+    System.out.println("creating directory: " + cummReportsFolder);
+    boolean result = false;
+
+    try{
+        theDir.mkdir();
+        result = true;
+    } 
+    catch(SecurityException se){
+        //handle it
+    }     
+}   
         ArrayList<xmlPage> CategoryPagelist = importAnchorXMLFile(pageCategoryFileName, "category");
-        ArrayList<File> categoryPageFile = makeTextFile(CategoryPagelist, 1, pageCategoryOutputFileName);
+        ArrayList<File> categoryPageFile = makeTextFile(CategoryPagelist, 1, pageCategoryOutputFileName, taggerOutputFolder, cummReportsFolder);
         
         ArrayList<xmlPage> CitationPagelist = importAnchorXMLFile(pageCitationFileName, "citation");
         ArrayList<File> citationPageFile = makeTextFile(CitationPagelist, 2, pageCitationOutputFileName);
@@ -282,7 +449,9 @@ public class xmlParser {
         
         ArrayList<xmlPage> TextPagelist = importAnchorXMLFile(pageTextFileName, "text");
         ArrayList<File> textPageFile = makeTextFile(TextPagelist, 4, pageTextOutputFileName);
-           
+
+        ArrayList<xmlPage> ArticlePagelist = importAnchorXMLFile(pageArticleFileName, "article");
+        ArrayList<File> articlePageFile = makeTextFile(ArticlePagelist, -1, pageArticleOutputFileName);        
     }
     
 }
