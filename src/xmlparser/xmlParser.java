@@ -442,16 +442,16 @@ if (!theDir2.exists()) {
         ArrayList<File> categoryPageFile = makeTextFile(CategoryPagelist, 1, pageCategoryOutputFileName, taggerOutputFolder, cummReportsFolder);
         
         ArrayList<xmlPage> CitationPagelist = importAnchorXMLFile(pageCitationFileName, "citation");
-        ArrayList<File> citationPageFile = makeTextFile(CitationPagelist, 2, pageCitationOutputFileName);
+        ArrayList<File> citationPageFile = makeTextFile(CitationPagelist, 2, pageCitationOutputFileName, taggerOutputFolder, cummReportsFolder);
         
         ArrayList<xmlPage> AnchorPagelist = importAnchorXMLFile(pageAnchorFileName, "anchor");
-        ArrayList<File> anchorPageFile = makeTextFile(AnchorPagelist, 3, pageAnchorOutputFileName);
+        ArrayList<File> anchorPageFile = makeTextFile(AnchorPagelist, 3, pageAnchorOutputFileName, taggerOutputFolder, cummReportsFolder);
         
         ArrayList<xmlPage> TextPagelist = importAnchorXMLFile(pageTextFileName, "text");
-        ArrayList<File> textPageFile = makeTextFile(TextPagelist, 4, pageTextOutputFileName);
+        ArrayList<File> textPageFile = makeTextFile(TextPagelist, 4, pageTextOutputFileName, taggerOutputFolder, cummReportsFolder);
 
         ArrayList<xmlPage> ArticlePagelist = importAnchorXMLFile(pageArticleFileName, "article");
-        ArrayList<File> articlePageFile = makeTextFile(ArticlePagelist, -1, pageArticleOutputFileName);        
+        ArrayList<File> articlePageFile = makeTextFile(ArticlePagelist, -1, pageArticleOutputFileName, taggerOutputFolder, cummReportsFolder);
     }
     
 }
