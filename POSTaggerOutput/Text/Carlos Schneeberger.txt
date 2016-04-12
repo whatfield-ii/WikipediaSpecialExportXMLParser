@@ -1,0 +1,1 @@
+Carlos_NNP Alberto_NNP Schneberger_NNP Lemp_NNP born_VBN 21_CD June_NNP 1902_CD in_IN Lautaro_NN Chile_NNP died_VBD 1_CD October_NNP 1973_CD in_IN Temuco_NNP Chile_NNP was_VBD a_DT Chilean_JJ Association_NN footballfootball_NN Forward_RB association_NN footballattacker_NN 

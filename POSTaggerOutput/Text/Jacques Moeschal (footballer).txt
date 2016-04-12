@@ -1,0 +1,1 @@
+Jacques_NNP Moeschal_NN 6_CD September_NNP 1900_CD 30_CD October_NNP 1956_CD was_VBD a_DT BelgiumBelgian_NN international_JJ association_NN footballfootballer_NN who_WP participated_VBN at_IN the_DT 1928_CD Summer_NNP Olympics_NNS and_CC the_DT 1930_CD FIFA_NN World_NN Cuprefref_NN 

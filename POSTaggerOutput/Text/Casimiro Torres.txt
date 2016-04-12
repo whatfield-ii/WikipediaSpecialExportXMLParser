@@ -1,0 +1,1 @@
+Casimiro_NNP Torres_NNP Valdes_NNS born_VBN 1906_CD date_NN of_IN death_NN unknown_NN was_VBD an_DT Chilean_JJ Association_NN footballfootball_NN midfielder_NN On_IN club_NN level_NN he_PRP played_VBN for_IN CD_NN Everton_NNP de_IN Via_NNP del_DT Mar_NNP 

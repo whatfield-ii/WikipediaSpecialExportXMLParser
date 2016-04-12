@@ -1,0 +1,1 @@
+tefan_NN Barbu_NNP born_VBN 2_CD March_NNP 1908_CD in_IN Arad_NN RomaniaArad_NN AustriaHungary_NNP now_RB Romania_NNP mdash_VB died_VBD 30_CD June_NNP 1970_CD in_IN Arad_NN RomaniaArad_NN was_VBD a_DT Romanian_JJ association_NN footballfootball_NN striker_NN who_WP played_VBN at_IN the_DT 1930_CD FIFA_NN World_NN Cup_NN in_IN Uruguay_NNP 

@@ -1,0 +1,1 @@
+Efran_NN Amezcua_NNP dates_NNS of_IN birth_NN and_CC death_NN unknowns_NNS was_VBD a_DT Mexican_NNP peopleMexican_NN Association_NN footballfootball_NN midfielder_NN who_WP made_VBN two_CD appearances_NNS for_IN the_DT Mexico_NNP national_JJ football_NN teamMexico_NN national_JJ team_NN at_IN 1930_CD FIFA_NN World_NN Cup_NN 

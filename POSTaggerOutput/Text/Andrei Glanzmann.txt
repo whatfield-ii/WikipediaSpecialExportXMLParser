@@ -1,0 +1,1 @@
+Andrei_NNP Glanzmann_NN 27_CD March_NNP 1907_CD 23_CD June_NNP 1988_CD was_VBD a_DT Romania_NNP national_JJ football_NN teamRomanian_NN international_JJ Association_NN footballfootball_NN Forward_RB association_NN footballforward_NN 

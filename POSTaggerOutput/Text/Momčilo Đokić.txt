@@ -1,0 +1,1 @@
+Momilo_NNP oki_NN born_VBN February_NNP 27_CD 1911_CD in_IN Kurumlija_NN Kingdom_NNP of_IN Serbia_NNP ndash_NN death_NN April_NNP 21_CD 1983_CD in_IN Bela_NNP Crkva_NNP VojvodinaBela_NN Crkva_NNP SFR_NN Yugoslavia_NNP was_VBD a_DT Serbian_JJ Association_NN footballfootball_NN player_NN and_CC manager_NN 

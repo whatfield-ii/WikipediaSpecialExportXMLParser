@@ -1,0 +1,1 @@
+Louis_NNP Versyp_NNP or_CC Versijp5_NN December_NNP 1908_CD 27_CD June_NNP 1988_CD was_VBD a_DT BelgiumBelgian_NN football_NN soccerfootball_NN player_NN and_CC manager_NN He_PRP earned_VBN 34_CD caps_NNS and_CC scored_VBN 8_CD goals_NNS for_IN the_DT Belgium_NNP national_JJ football_NN team_NN 

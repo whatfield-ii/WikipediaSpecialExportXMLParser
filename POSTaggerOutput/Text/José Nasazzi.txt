@@ -1,0 +1,1 @@
+Jos_NN Nasazzi_NNP Yarza_NN 24_CD May_NNP 1901_CD 17_CD June_NNP 1968_CD was_VBD the_DT Uruguayan_NN footballer_NN who_WP captained_VBN his_PRP$ country_NN when_WRB they_PRP won_VBD the_DT inaugural_JJ FIFA_NN World_NN Cup_NN in_IN 1930_CD FIFA_NN World_NN Cup1930_NN 

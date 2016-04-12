@@ -1,0 +1,1 @@
+Jos_NN Ruiz_NN born_VBN 1904_CD date_NN of_IN death_NN unknown_NN was_VBD a_DT Mexican_NNP peopleMexican_NN Association_NN footballfootball_NN Forward_RB association_NN footballforward_NN who_WP made_VBN two_CD appearances_NNS for_IN Mexico_NNP national_JJ teamMexico_NN at_IN the_DT 1930_CD FIFA_NN World_NN Cup_NN 

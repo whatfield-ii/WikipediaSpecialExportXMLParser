@@ -1,0 +1,1 @@
+Juan_NNP Aguilera_NNP was_VBD an_DT Chilean_JJ Association_NN footballfootball_NN Forward_RB association_NN footballattacker_NN He_PRP played_VBN in_IN the_DT 1930_CD World_NN Cup_NN He_PRP played_VBN in_IN the_DT Chilean_JJ league_NN in_IN Audax_NNP Italiano_NNP 

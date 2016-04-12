@@ -1,0 +1,1 @@
+Hilario_NNP Lpez_NN Garca_NNP 18_CD November_NNP 1907_CD 17_CD June_NNP 1965ref_NN nameworldfootballnetref_NN was_VBD a_DT Mexican_NNP peopleMexican_NN Association_NN footballfootball_NN Forward_RB association_NN footballforward_NN who_WP made_VBN three_CD appearances_NNS for_IN the_DT Mexico_NNP national_JJ football_NN teamMexico_NN at_IN the_DT 1930_CD FIFA_NN World_NN Cup_NN 

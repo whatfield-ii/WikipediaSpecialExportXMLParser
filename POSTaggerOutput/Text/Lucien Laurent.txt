@@ -1,0 +1,1 @@
+Lucien_NNP Laurent_NNP 10_CD December_NNP 1907_CD 11_CD April_NNP 2005_CD was_VBD a_DT FranceFrench_NN association_NN football_NN player_NN He_PRP is_VBZ famous_JJ for_IN having_VBG scored_VBN the_DT first_RB ever_RB FIFA_NN World_NN Cup_NN goal_NN 

@@ -1,0 +1,1 @@
+James_NNP Cuthbert_NNP Gentle_JJ July_NNP 21_CD 1904_CD May_NNP 22_CD 1986_CD was_VBD an_DT United_NNP StatesAmerican_NN footballsoccersoccer_NN striker_NN field_NN hockey_NN player_NN soldier_NN and_CC golfer_NN He_PRP is_VBZ a_DT member_NN of_IN the_DT National_NNP Soccer_NN Hall_NN of_IN Fame_NNP 

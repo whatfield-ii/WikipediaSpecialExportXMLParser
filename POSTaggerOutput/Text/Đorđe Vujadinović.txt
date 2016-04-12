@@ -1,0 +1,1 @@
+ore_NN okica_NN Vujadinovi_NNP Serbian_JJ Cyrillic_JJ 29_CD November_NNP 1909_CD 5_CD October_NNP 1990_CD was_VBD a_DT Serbian_JJ international_JJ Association_NN footballfootball_NN player_NN and_CC manager_NN 

@@ -1,0 +1,1 @@
+Aleksandar_NNP Tirke_NN Tirnani_NNP Serbian_JJ Cyrillic_JJ 15_CD July_NNP 1910_CD 13_CD December_NNP 1992_CD was_VBD a_DT Serbian_JJ football_NN soccer_NN player_NN and_CC manager_NN 

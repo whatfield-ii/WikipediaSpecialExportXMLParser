@@ -1,0 +1,1 @@
+Jos_NN Pedro_NNP Cea_NN Redondela_NN Spain_NNP September_NNP 1_CD 1900_CD September_NNP 18_CD 1970_CD Montevideorefref_NN was_VBD an_DT Uruguayan_NN Association_NN footballfootball_NN player_NN and_CC coach_NN 

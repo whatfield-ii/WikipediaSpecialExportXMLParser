@@ -1,0 +1,1 @@
+Petre_NNP Steinbach_NNP born_VBN in_IN Timioara_NNP Kingdom_NNP of_IN RomaniaRomania_NNP in_IN January_NNP 1_CD 1906_CD death_NN in_IN Germany_NNP 1996_CD was_VBD a_DT Romanian_JJ Association_NN footballfootball_NN midfielder_NN 

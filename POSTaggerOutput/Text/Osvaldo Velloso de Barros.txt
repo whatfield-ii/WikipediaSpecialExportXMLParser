@@ -1,0 +1,1 @@
+Oswaldo_NNP de_IN Barros_NNP Velloso_NNP born_VBN 25_CD August_NNP 1908_CD death_NN 8_CD August_NNP 1996_CD was_VBD a_DT Brazilian_JJ Football_NN soccerfootball_NN player_NN He_PRP has_VBZ played_VBN for_IN Brazil_NNP national_JJ football_NN teamBrazil_NN national_JJ team_NN at_IN the_DT 1930_CD FIFA_NN World_NN Cup_NN finalsrefref_NN 

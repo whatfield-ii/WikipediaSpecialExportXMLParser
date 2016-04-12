@@ -1,0 +1,1 @@
+Juan_NNP Jorge_NNP Argote_NN 1906_CD in_IN Bolivia_NNP date_NN of_IN death_NN unknown_NN was_VBD a_DT Bolivian_JJ Association_NN footballfootball_NN midfielder_NN 

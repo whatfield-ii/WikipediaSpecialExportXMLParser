@@ -1,0 +1,1 @@
+Ljubia_NNP Leo_NNP Stevanovi_NN Serbian_JJ Cyrillic_JJ a_DT Ceao_NNP born_VBN January_NNP 4_CD 1910_CD in_IN Belgrade_NNP ndash_NN died_VBD May_NNP 17_CD 1978_CD in_IN Nice_JJ was_VBD an_DT football_NN soccer_NN player_NN who_WP represented_VBN Yugoslavia_NNP national_JJ football_NN teamYugoslavia_NN 4_CD caps_NNS 0_CD goals_NNS 

@@ -1,0 +1,1 @@
+Carlos_NNP Vidal_NNP Lepe_NNP 24_CD February_NNP 1902_CD 7_CD June_NNP 1982ref_NN nameworldfootballnetref_NN was_VBD an_DT Chilean_JJ Association_NN footballfootball_NN Forward_RB association_NN footballforward_NN who_WP represented_VBN the_DT Chilean_JJ national_JJ team_NN at_IN the_DT 1930_CD FIFA_NN World_NN Cup_NN 

@@ -1,0 +1,1 @@
+Jos_NN Bustamante_NNP born_VBN 1907_CD date_NN of_IN death_NN unknown_NN was_VBD a_DT Bolivian_JJ Association_NN footballfootball_NN Forward_RB association_NN footballforward_NN He_PRP was_VBD played_VBN for_IN Club_NNP Litoral_NNP La_NN PazClub_NN Litoral_NNP of_IN La_NN Paz_NN 

@@ -1,0 +1,1 @@
+Benedicto_NNP de_IN Moraes_NNS Menezes_NNS born_VBN 30_CD October_NNP 1906_CD date_NN of_IN death_NN unknown_NN was_VBD a_DT Brazilian_JJ Football_NN soccerfootball_NN player_NN He_PRP played_VBN for_IN Brazil_NNP national_JJ football_NN teamBrazil_NN national_JJ team_NN 

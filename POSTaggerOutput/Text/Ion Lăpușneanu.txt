@@ -1,0 +1,1 @@
+Ion_NN Lpuneanu_NNP born_VBN December_NNP 8_CD 1908_CD in_IN Bucharest_NNP deceased_VBN February_NNP 24_CD 1992_CD was_VBD a_DT Romanian_JJ Association_NN footballfootball_NN Goalkeeper_NN association_NN footballgoalkeeper_NN 

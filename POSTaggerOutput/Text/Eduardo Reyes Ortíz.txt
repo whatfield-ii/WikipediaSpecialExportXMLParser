@@ -1,0 +1,1 @@
+Eduardo_NNP Reyes_NNS Ortiz_NNP born_VBN 1_CD January_NNP 1907_CD in_IN Bolivia_NNP was_VBD a_DT Bolivian_JJ Association_NN footballfootball_NN Forward_RB association_NN footballForward_NN 
