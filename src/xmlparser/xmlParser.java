@@ -258,7 +258,7 @@ FileWriter AttrFstream;
     BufferedWriter AttrOut;
 
     // create your filewriter and bufferedreader
-    AttrFstream = new FileWriter("CumulativeReports/Cumm_"+fileName+wiki.pageTitle);
+    AttrFstream = new FileWriter("CumulativeReports/"+wiki.pageTitle+".txt");
     AttrOut = new BufferedWriter(AttrFstream);
 
     // create your iterator for your map
