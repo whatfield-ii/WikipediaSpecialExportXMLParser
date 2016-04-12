@@ -46,10 +46,13 @@ import org.xml.sax.SAXException;
 import java.io.BufferedReader; 
 import java.io.FileReader; 
 import java.util.Collections; 
+import java.util.LinkedHashMap;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Comparator;
+import java.util.TreeMap;
 
 /**
  * The purpose of this project is take a XML file from the Wikipedia Special
@@ -253,7 +256,9 @@ FileWriter AttrFstream;
                         break;
                     }
                     case 4: {
-          Map<String, Integer> map = new HashMap<>();                      
+          HashMap<String, Integer> map = new HashMap<>();    
+ValueComparator bvc = new ValueComparator(map);
+        TreeMap sorted_map = new TreeMap(bvc);          
 FileWriter AttrFstream;
     BufferedWriter AttrOut;
 
@@ -278,8 +283,8 @@ FileWriter AttrFstream;
 
                         }
                         }
-
-for (HashMap.Entry<String, Integer> entry : map.entrySet())
+LinkedHashMap sortedMap = sortHashMapByValuesD(map);
+for (HashMap.Entry<String, Integer> entry : sortedMap.entrySet())
 {
     //System.out.println(entry.getKey() + "/" + entry.getValue());
         AttrOut.write(entry.getKey() + "" + entry.getValue() + "\n");    
@@ -378,6 +383,37 @@ FileWriter AttrFstream;
         return null;
     }
     
+    
+public static LinkedHashMap sortHashMapByValuesD(HashMap passedMap) {
+   List mapKeys = new ArrayList(passedMap.keySet());
+   List mapValues = new ArrayList(passedMap.values());
+   Collections.sort(mapValues);
+   Collections.sort(mapKeys);
+
+   LinkedHashMap sortedMap = new LinkedHashMap();
+
+   Iterator valueIt = mapValues.iterator();
+   while (valueIt.hasNext()) {
+       Object val = valueIt.next();
+       Iterator keyIt = mapKeys.iterator();
+
+       while (keyIt.hasNext()) {
+           Object key = keyIt.next();
+           String comp1 = passedMap.get(key).toString();
+           String comp2 = val.toString();
+
+           if (comp1.equals(comp2)){
+               passedMap.remove(key);
+               mapKeys.remove(key);
+               sortedMap.put((String)key, (Double)val);
+               break;
+           }
+
+       }
+
+   }
+   return sortedMap;
+}    
     /**
      * 
      * @param doc the DOM/XML document to write to a file
