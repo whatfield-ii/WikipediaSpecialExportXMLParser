@@ -149,11 +149,13 @@ FileWriter AttrFstream;
             File file = new File(taggedFolderName + "/"+wiki.pageTitle+".txt");
             output = new BufferedWriter(new FileWriter(file));                        
                         for (String categoryString : wiki.getCategories()) {
+        System.out.println("start"+categoryString+ "stop\n");                              
                              String taggedCategoryString = tagger.tagString(categoryString);
                              output.write(taggedCategoryString); 
         Integer n = map.get(taggedCategoryString);
         n = (n == null) ? 1 : ++n;
-        map.put(taggedCategoryString, n);                             
+        map.put(taggedCategoryString, n);     
+        System.out.println("start"+taggedCategoryString+ "stop\n");         
                         }
     // then use the iterator to loop through the map, stopping when we reach the
     // last record in the map or when we have printed enough records
@@ -164,7 +166,10 @@ FileWriter AttrFstream;
 
         // since you only want the value, we only care about pairs.getValue(), which is written to out
         AttrOut.write(pairs.getValue() + "\n");
+        System.out.println(pairs.getValue() + "\n");   
+        System.out.println("in category");
     }
+        AttrOut.flush();
     // lastly, close the file and end
     AttrOut.close();                         
                         output.flush();                        
@@ -201,7 +206,9 @@ FileWriter AttrFstream;
 
         // since you only want the value, we only care about pairs.getValue(), which is written to out
         AttrOut.write(pairs.getValue() + "\n");
+        System.out.println(pairs.getValue() + "\n");
     }
+        AttrOut.flush();
     // lastly, close the file and end
     AttrOut.close();   
                         output.flush();                        
@@ -238,6 +245,7 @@ FileWriter AttrFstream;
         // since you only want the value, we only care about pairs.getValue(), which is written to out
         AttrOut.write(pairs.getValue() + "\n");
     }
+        AttrOut.flush();
     // lastly, close the file and end
     AttrOut.close();   
                         output.flush();                        
@@ -256,24 +264,38 @@ FileWriter AttrFstream;
     // create your iterator for your map
     Iterator<Map.Entry<String, Integer>> it = map.entrySet().iterator();                       
                           
-            File file = new File(fileName+wiki.pageTitle);
+            //File file = new File(fileName+wiki.pageTitle);
+            File file = new File(taggedFolderName + "/"+wiki.pageTitle+".txt");            
             output = new BufferedWriter(new FileWriter(file));                         
-                        for (String textString : wiki.getText()) {               
-                             output.write(tagger.tagString(textString));
-        Integer n = map.get(textString);
+                        for (String textString : wiki.getText()) {  
+                            String[] textStringArray = textString.split("\\s+");
+                        for (String eachTextString : textStringArray) {                              
+                             String taggedTextString = tagger.tagString(eachTextString);                            
+                             output.write(taggedTextString);
+        Integer n = map.get(taggedTextString);
         n = (n == null) ? 1 : ++n;
-        map.put(textString, n);                             
+        map.put(taggedTextString, n); 
+
                         }
+                        }
+
+for (HashMap.Entry<String, Integer> entry : map.entrySet())
+{
+    //System.out.println(entry.getKey() + "/" + entry.getValue());
+        AttrOut.write(entry.getKey() + "" + entry.getValue() + "\n");    
+}                        
     // then use the iterator to loop through the map, stopping when we reach the
     // last record in the map or when we have printed enough records
-    while (it.hasNext()) {
-
-        // the key/value pair is stored here in pairs
-        HashMap.Entry<String, Integer> pairs = it.next();
-
-        // since you only want the value, we only care about pairs.getValue(), which is written to out
-        AttrOut.write(pairs.getValue() + "\n");
-    }
+//    while (it.hasNext()) {
+//
+//        // the key/value pair is stored here in pairs
+//        HashMap.Entry<String, Integer> pairs = it.next();
+//
+//        // since you only want the value, we only care about pairs.getValue(), which is written to out
+//        AttrOut.write(pairs.getValue() + "\n");
+//                System.out.println(pairs.getValue());
+//    }
+    AttrOut.flush();
     // lastly, close the file and end
     AttrOut.close();  
                         output.flush();
@@ -294,33 +316,36 @@ FileWriter AttrFstream;
                           
                                     File file = new File(fileName+wiki.pageTitle);
             output = new BufferedWriter(new FileWriter(file)); 
-            
-                        // add Categories, Citations, Anchors, and Text
-                        for (String categoryString : wiki.getCategories()) {
-                             output.write(tagger.tagString(categoryString));
-        Integer n = map.get(categoryString);
-        n = (n == null) ? 1 : ++n;
-        map.put(categoryString, n);                              
-                        }
-
-                        for (String citationSring : wiki.getCitations()) {
-                             output.write(tagger.tagString(citationSring));
-        Integer n = map.get(citationSring);
-        n = (n == null) ? 1 : ++n;
-        map.put(citationSring, n);                              
-                        }
-
-                        for (String anchorString : wiki.getAnchors()) {
-                             output.write(tagger.tagString(anchorString));
-        Integer n = map.get(anchorString);
-        n = (n == null) ? 1 : ++n;
-        map.put(anchorString, n);                              
-                        }
+//            
+//                        // add Categories, Citations, Anchors, and Text
+//                        for (String categoryString : wiki.getCategories()) {
+//                             output.write(tagger.tagString(categoryString));
+//        Integer n = map.get(categoryString);
+//        n = (n == null) ? 1 : ++n;
+//        map.put(categoryString, n);                              
+//                        }
+//
+//                        for (String citationSring : wiki.getCitations()) {
+//                             output.write(tagger.tagString(citationSring));
+//        Integer n = map.get(citationSring);
+//        n = (n == null) ? 1 : ++n;
+//        map.put(citationSring, n);                              
+//                        }
+//
+//                        for (String anchorString : wiki.getAnchors()) {
+//                             output.write(tagger.tagString(anchorString));
+//        Integer n = map.get(anchorString);
+//        n = (n == null) ? 1 : ++n;
+//        map.put(anchorString, n);                              
+//                        }
                         for (String textString : wiki.getText()) {
+        System.out.println("start"+textString+ "stop\n");                             
                              output.write(tagger.tagString(textString));
-        Integer n = map.get(textString);
+                             String taggedTextString = tagger.tagString(textString);                             
+        Integer n = map.get(taggedTextString);
         n = (n == null) ? 1 : ++n;
-        map.put(textString, n);                             
+        map.put(taggedTextString, n);    
+        System.out.println("start"+taggedTextString+ "stop\n");         
                         }
     // then use the iterator to loop through the map, stopping when we reach the
     // last record in the map or when we have printed enough records
@@ -332,6 +357,7 @@ FileWriter AttrFstream;
         // since you only want the value, we only care about pairs.getValue(), which is written to out
         AttrOut.write(pairs.getValue() + "\n");
     }
+        AttrOut.flush();
     // lastly, close the file and end
     AttrOut.close();  
                         output.flush();                        
@@ -383,6 +409,26 @@ FileWriter AttrFstream;
         }
     }
     
+    public static void createDirectory(String folderName) {
+        
+File theDir = new File(folderName);
+
+// if the directory does not exist, create it
+if (!theDir.exists()) {
+    System.out.println("creating directory: " + folderName);
+    boolean result = false;
+
+    try{
+        theDir.mkdir();
+        result = true;
+    } 
+    catch(SecurityException se){
+        //handle it
+    } 
+}
+        
+    }
+    
     /**
      * THE MAIN METHOD. <-- String fileName designates input for now. -->
      * 
@@ -400,58 +446,37 @@ FileWriter AttrFstream;
         String pageAnchorFileName = "xmlOutput/pageAnchorDocument.xml";
         String pageTextFileName = "xmlOutput/pageTextDocument.xml"; 
         
-        String pageArticleOutputFileName = "POSTaggerOutput/pageArticleDocument";
-        String pageCategoryOutputFileName = "POSTaggerOutput/pageCategoryDocument";        
-        String pageCitationOutputFileName = "POSTaggerOutput/pageCitationDocument";
-        String pageAnchorOutputFileName = "POSTaggerOutput/pageAnchorDocument";
-        String pageTextOutputFileName = "POSTaggerOutput/pageTextDocument";    
+        String pageArticleOutputFileName = "pageArticleDocument";
+        String pageCategoryOutputFileName = "pageCategoryDocument";        
+        String pageCitationOutputFileName = "pageCitationDocument";
+        String pageAnchorOutputFileName = "pageAnchorDocument";
+        String pageTextOutputFileName = "pageTextDocument";    
         
         String taggerOutputFolder = "POSTaggerOutput";
-        String cummReportsFolder = "CumulativeReports";         
-File theDir = new File("new folder");
+        String cummReportsFolder = "CumulativeReports";   
 
-// if the directory does not exist, create it
-if (!theDir.exists()) {
-    System.out.println("creating directory: " + taggerOutputFolder);
-    boolean result = false;
-
-    try{
-        theDir.mkdir();
-        result = true;
-    } 
-    catch(SecurityException se){
-        //handle it
-    } 
-}
-File theDir2 = new File(cummReportsFolder);
-
-// if the directory does not exist, create it
-if (!theDir2.exists()) {
-    System.out.println("creating directory: " + cummReportsFolder);
-    boolean result = false;
-
-    try{
-        theDir.mkdir();
-        result = true;
-    } 
-    catch(SecurityException se){
-        //handle it
-    }     
-}   
-        ArrayList<xmlPage> CategoryPagelist = importAnchorXMLFile(pageCategoryFileName, "category");
-        ArrayList<File> categoryPageFile = makeTextFile(CategoryPagelist, 1, pageCategoryOutputFileName, taggerOutputFolder, cummReportsFolder);
+        createDirectory("POSTaggerOutput/Articles");
+        createDirectory("POSTaggerOutput/Category");
+        createDirectory("POSTaggerOutput/Citations");
+        createDirectory("POSTaggerOutput/Anchors");
+        createDirectory("POSTaggerOutput/Text");
         
-        ArrayList<xmlPage> CitationPagelist = importAnchorXMLFile(pageCitationFileName, "citation");
-        ArrayList<File> citationPageFile = makeTextFile(CitationPagelist, 2, pageCitationOutputFileName, taggerOutputFolder, cummReportsFolder);
-        
-        ArrayList<xmlPage> AnchorPagelist = importAnchorXMLFile(pageAnchorFileName, "anchor");
-        ArrayList<File> anchorPageFile = makeTextFile(AnchorPagelist, 3, pageAnchorOutputFileName, taggerOutputFolder, cummReportsFolder);
-        
+        createDirectory(cummReportsFolder);        
+
+//        ArrayList<xmlPage> CategoryPagelist = importAnchorXMLFile(pageCategoryFileName, "category");
+//        ArrayList<File> categoryPageFile = makeTextFile(CategoryPagelist, 1, pageCategoryOutputFileName, taggerOutputFolder, cummReportsFolder);
+//        
+//        ArrayList<xmlPage> CitationPagelist = importAnchorXMLFile(pageCitationFileName, "citation");
+//        ArrayList<File> citationPageFile = makeTextFile(CitationPagelist, 2, pageCitationOutputFileName, taggerOutputFolder, cummReportsFolder);
+//        
+//        ArrayList<xmlPage> AnchorPagelist = importAnchorXMLFile(pageAnchorFileName, "anchor");
+//        ArrayList<File> anchorPageFile = makeTextFile(AnchorPagelist, 3, pageAnchorOutputFileName, taggerOutputFolder, cummReportsFolder);
+//        
         ArrayList<xmlPage> TextPagelist = importAnchorXMLFile(pageTextFileName, "text");
-        ArrayList<File> textPageFile = makeTextFile(TextPagelist, 4, pageTextOutputFileName, taggerOutputFolder, cummReportsFolder);
+        ArrayList<File> textPageFile = makeTextFile(TextPagelist, 4, pageTextOutputFileName, "POSTaggerOutput/Text", cummReportsFolder);
 
-        ArrayList<xmlPage> ArticlePagelist = importAnchorXMLFile(pageArticleFileName, "article");
-        ArrayList<File> articlePageFile = makeTextFile(ArticlePagelist, -1, pageArticleOutputFileName, taggerOutputFolder, cummReportsFolder);
+//        ArrayList<xmlPage> ArticlePagelist = importAnchorXMLFile(pageArticleFileName, "article");
+//        ArrayList<File> articlePageFile = makeTextFile(ArticlePagelist, -1, pageArticleOutputFileName, taggerOutputFolder, cummReportsFolder);
     }
     
 }
